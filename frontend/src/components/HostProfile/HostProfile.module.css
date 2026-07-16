@@ -175,7 +175,7 @@
 .coHostsSection {}
 
 .coHostsHeading {
-  font-size: var(--font-size-base);
+  font-size: 18px;
   font-weight: 600;
   color: var(--color-text-primary);
   margin-bottom: var(--space-4);
@@ -224,7 +224,7 @@
 .hostDetails {}
 
 .hostDetailsHeading {
-  font-size: var(--font-size-base);
+  font-size: 18px;
   font-weight: 600;
   color: var(--color-text-primary);
   margin-bottom: var(--space-2);
