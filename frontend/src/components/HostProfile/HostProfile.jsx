@@ -1,5 +1,6 @@
 import styles from './HostProfile.module.css';
 
+
 // ─── Icon: Balloon (Born in the 80s) ─────────────────────────────────────────
 const BalloonIcon = () => (
   <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="2" width="18" height="18" aria-hidden="true">
