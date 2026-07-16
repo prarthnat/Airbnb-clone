@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="100%" height="100%">
+  <defs>
+    <linearGradient id="towelTop" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="100%" stop-color="#F1F5F9" />
+    </linearGradient>
+    <linearGradient id="towelFront1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#E2E8F0" />
+      <stop offset="30%" stop-color="#F8FAFC" />
+      <stop offset="70%" stop-color="#CBD5E1" />
+      <stop offset="100%" stop-color="#94A3B8" />
+    </linearGradient>
+    <linearGradient id="towelFront2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#CBD5E1" />
+      <stop offset="30%" stop-color="#F1F5F9" />
+      <stop offset="70%" stop-color="#94A3B8" />
+      <stop offset="100%" stop-color="#64748B" />
+    </linearGradient>
+    <linearGradient id="towelFront3" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#E2E8F0" />
+      <stop offset="30%" stop-color="#FFFFFF" />
+      <stop offset="70%" stop-color="#CBD5E1" />
+      <stop offset="100%" stop-color="#94A3B8" />
+    </linearGradient>
+    <linearGradient id="lotusPetal" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#DB2777" />
+      <stop offset="50%" stop-color="#F472B6" />
+      <stop offset="100%" stop-color="#FCE7F3" />
+    </linearGradient>
+    <linearGradient id="lotusCenter" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FEF08A" />
+      <stop offset="100%" stop-color="#EAB308" />
+    </linearGradient>
+  </defs>
+
+  <!-- Shadow under towel stack -->
+  <ellipse cx="24" cy="43" rx="16" ry="3.5" fill="#000000" opacity="0.16" />
+
+  <!-- Bottom towel layer -->
+  <path d="M8 35 C8 38.5, 40 38.5, 40 35 L40 39 C40 42.5, 8 42.5, 8 39 Z" fill="url(#towelFront2)" />
+  <ellipse cx="24" cy="35" rx="16" ry="4" fill="url(#towelTop)" />
+  <!-- Fold line -->
+  <path d="M10 37 C18 39, 30 39, 38 37" fill="none" stroke="#94A3B8" stroke-width="0.8" />
+
+  <!-- Middle towel layer -->
+  <path d="M9 29 C9 32.5, 39 32.5, 39 29 L39 33 C39 36.5, 9 36.5, 9 33 Z" fill="url(#towelFront1)" />
+  <ellipse cx="24" cy="29" rx="15" ry="3.8" fill="url(#towelTop)" />
+  <!-- Fold line -->
+  <path d="M11 31 C18 33, 30 33, 37 31" fill="none" stroke="#CBD5E1" stroke-width="0.8" />
+
+  <!-- Top towel layer -->
+  <path d="M10 23 C10 26.5, 38 26.5, 38 23 L38 27 C38 30.5, 10 30.5, 10 27 Z" fill="url(#towelFront3)" />
+  <ellipse cx="24" cy="23" rx="14" ry="3.5" fill="url(#towelTop)" />
+  <!-- Fold line -->
+  <path d="M12 25 C18 27, 30 27, 36 25" fill="none" stroke="#E2E8F0" stroke-width="0.8" />
+
+  <!-- Lotus Flower sitting on top of towel stack -->
+  <!-- Outer leaves/green base -->
+  <path d="M16 21 C20 23, 28 23, 32 21 C28 24, 20 24, 16 21 Z" fill="#10B981" />
+  
+  <!-- Left/Right outer petals -->
+  <path d="M18 20 C14 16, 16 11, 20 16 Z" fill="url(#lotusPetal)" />
+  <path d="M30 20 C34 16, 32 11, 28 16 Z" fill="url(#lotusPetal)" />
+
+  <!-- Mid petals -->
+  <path d="M20 19 C18 13, 22 9, 23 15 Z" fill="url(#lotusPetal)" />
+  <path d="M28 19 C30 13, 26 9, 25 15 Z" fill="url(#lotusPetal)" />
+
+  <!-- Center petal -->
+  <path d="M24 19 C21 11, 27 11, 24 19 Z" fill="url(#lotusPetal)" />
+  
+  <!-- Yellow lotus heart/stamen -->
+  <circle cx="24" cy="18" r="1.8" fill="url(#lotusCenter)" />
+</svg>

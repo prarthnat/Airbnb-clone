@@ -1,0 +1,155 @@
+.section {}
+
+.heading {
+  font-size: 22px;
+  font-weight: 600;
+  color: #222222;
+  margin-bottom: 24px;
+}
+
+.location {
+  font-size: 16px;
+  color: #222222;
+  margin-bottom: 24px;
+}
+
+.mapWrapper {
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  height: 480px;
+  margin-bottom: 24px;
+  background: #eef6e9;
+}
+
+.map {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background:
+    linear-gradient(rgba(180, 199, 179, 0.28) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(180, 199, 179, 0.28) 1px, transparent 1px),
+    #eef6e9;
+  background-size: 90px 90px;
+}
+
+.water {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 42%;
+  background: #a9d4e5;
+  clip-path: polygon(0 0, 78% 0, 48% 100%, 0 100%);
+}
+
+.parkOne,
+.parkTwo {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(190, 225, 180, 0.65);
+}
+
+.parkOne {
+  width: 100px;
+  height: 100px;
+  left: 25%;
+  top: 30%;
+}
+
+.parkTwo {
+  width: 136px;
+  height: 136px;
+  right: 24%;
+  top: 46%;
+}
+
+.pin {
+  position: absolute;
+  left: 49%;
+  top: 49%;
+  width: 58px;
+  height: 58px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  color: #ffffff;
+  background: #222222;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.24);
+}
+
+.searchBtn {
+  position: absolute;
+  left: 16px;
+  top: 16px;
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #222222;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+}
+
+.zoomControls {
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.zoomControls button {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #222222;
+  font-size: 22px;
+  line-height: 1;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.16);
+}
+
+.exactLocation {
+  color: #222222;
+  font-size: 14px;
+  margin-bottom: 44px;
+}
+
+.directions {
+  margin-bottom: 24px;
+}
+
+.directionsTitle {
+  font-size: 22px;
+  font-weight: 600;
+  color: #222222;
+  margin-bottom: 18px;
+}
+
+.directionsText {
+  font-size: 16px;
+  color: #222222;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.showMore {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #222222;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.divider {
+  height: 1px;
+  background: var(--color-border);
+  margin: 56px 0;
+}

@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="100%" height="100%">
+  <defs>
+    <linearGradient id="lovBack" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2DD4BF" />
+      <stop offset="50%" stop-color="#14B8A6" />
+      <stop offset="100%" stop-color="#0F766E" />
+    </linearGradient>
+    <linearGradient id="lovSeat" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#5EEAD4" />
+      <stop offset="60%" stop-color="#14B8A6" />
+      <stop offset="100%" stop-color="#115E59" />
+    </linearGradient>
+    <linearGradient id="lovArm" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2DD4BF" />
+      <stop offset="70%" stop-color="#0F766E" />
+      <stop offset="100%" stop-color="#115E59" />
+    </linearGradient>
+    <linearGradient id="roundPillow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FDE047" />
+      <stop offset="50%" stop-color="#F97316" />
+      <stop offset="100%" stop-color="#C2410C" />
+    </linearGradient>
+    <linearGradient id="stripPillow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38B6FF" />
+      <stop offset="100%" stop-color="#0284C7" />
+    </linearGradient>
+    <linearGradient id="woodLeg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#D97706" />
+      <stop offset="100%" stop-color="#78350F" />
+    </linearGradient>
+  </defs>
+
+  <!-- Shadow -->
+  <ellipse cx="24" cy="43" rx="18" ry="3" fill="#000000" opacity="0.18" />
+
+  <!-- Wooden legs -->
+  <path d="M10 36 L8 43 L11 43 L13 36 Z" fill="url(#woodLeg)" />
+  <path d="M38 36 L40 43 L37 43 L35 36 Z" fill="url(#woodLeg)" />
+  <path d="M12 36 L10 44 L14 44 L16 36 Z" fill="url(#woodLeg)" />
+  <path d="M36 36 L38 44 L34 44 L32 36 Z" fill="url(#woodLeg)" />
+
+  <!-- Back cushions (two rounded cushions) -->
+  <rect x="8" y="10" width="15.5" height="20" rx="5" fill="url(#lovBack)" />
+  <rect x="24.5" y="10" width="15.5" height="20" rx="5" fill="url(#lovBack)" />
+
+  <!-- Seat cushions -->
+  <rect x="8" y="24" width="15.5" height="13" rx="4" fill="url(#lovSeat)" />
+  <rect x="24.5" y="24" width="15.5" height="13" rx="4" fill="url(#lovSeat)" />
+  <!-- Center seam shadow -->
+  <line x1="24" y1="24" x2="24" y2="37" stroke="#115E59" stroke-width="1.2" opacity="0.6" />
+
+  <!-- Left armrest -->
+  <rect x="4" y="18" width="6.5" height="19" rx="3.2" fill="url(#lovArm)" />
+  <!-- Right armrest -->
+  <rect x="37.5" y="18" width="6.5" height="19" rx="3.2" fill="url(#lovArm)" />
+
+  <!-- Striped pillow -->
+  <rect x="24" y="15" width="10" height="10" rx="2.5" fill="url(#stripPillow)" transform="rotate(-6 29 20)" />
+  <path d="M25 17 L33 16 M25.5 20 L33.5 19 M26 23 L34 22" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" />
+
+  <!-- Round orange/yellow textured cushion in front -->
+  <circle cx="31" cy="23" r="5" fill="url(#roundPillow)" />
+  <circle cx="31" cy="23" r="2.5" fill="none" stroke="#FEF08A" stroke-width="0.8" opacity="0.5" />
+</svg>

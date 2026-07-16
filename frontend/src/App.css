@@ -1,0 +1,155 @@
+/* App-level layout styles */
+
+/* Skip link for accessibility */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 16px;
+  padding: 12px 20px;
+  background: var(--color-primary);
+  color: white;
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  z-index: 1000;
+  transition: top var(--transition-fast);
+}
+
+.skip-link:focus {
+  top: 16px;
+}
+
+/* ─── Main ───────────────────────────────────────────────────────────────── */
+.main {
+  min-height: calc(100vh - var(--header-height));
+  padding-top: 24px;
+}
+
+/* Sections need scroll-margin-top so sticky nav doesn't cover them */
+#amenities,
+#reviews,
+#map {
+  scroll-margin-top: 88px;
+}
+
+/* ─── Two Column Listing Layout ─────────────────────────────────────────── */
+.listing-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 673px) 365px;
+  gap: 82px;
+  align-items: start;
+  margin-bottom: 80px;
+}
+
+.listing-left {
+  min-width: 0; /* prevent overflow */
+}
+
+.listing-right {
+  align-self: stretch;
+  height: 100%;
+}
+
+/* ─── Nearby Stays — full width below two-column layout ─────────────────── */
+.nearby-section {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 0 var(--space-12);
+}
+
+/* ─── Layout Responsiveness ──────────────────────────────────────────────── */
+@media (max-width: 1180px) {
+  .container {
+    padding: 0 24px;
+  }
+  
+  .listing-layout {
+    gap: 40px;
+  }
+}
+
+@media (max-width: 992px) {
+  .listing-layout {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .listing-right {
+    height: auto;
+  }
+}
+
+/* ─── Loading State ──────────────────────────────────────────────────────── */
+.loading-container {
+  padding: 0 var(--space-8);
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.loading-gallery {
+  width: 100%;
+  height: 480px;
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--space-8);
+}
+
+.loading-content {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: var(--space-16);
+}
+
+.loading-main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.loading-title {
+  height: 40px;
+  width: 70%;
+}
+
+.loading-meta {
+  height: 20px;
+  width: 50%;
+}
+
+.loading-body {
+  height: 16px;
+  width: 100%;
+}
+
+.loading-widget {
+  height: 480px;
+  border-radius: var(--radius-xl);
+}
+
+/* ─── Error State ─────────────────────────────────────────────────────────── */
+.error-container {
+  padding: var(--space-16) var(--space-8);
+  max-width: var(--max-width);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.error-container h2 {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-4);
+}
+
+.error-container p {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-4);
+}
+
+.error-container code {
+  background: var(--color-bg-subtle);
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-sm);
+  color: var(--color-primary);
+  border: 1px solid var(--color-border);
+}

@@ -1,0 +1,166 @@
+.section {
+  padding: 46px 0 48px;
+  border-bottom: 1px solid #DDDDDD;
+}
+
+.header {
+  margin-bottom: 24px;
+}
+
+.title {
+  font-size: 22px;
+  font-weight: 600;
+  color: #222222;
+  margin-bottom: 4px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #717171;
+}
+
+.monthsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 68px;
+  margin-bottom: 24px;
+}
+
+.month {
+  display: flex;
+  flex-direction: column;
+}
+
+.monthHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.monthTitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: #222222;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.navBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #222222;
+  transition: background-color 150ms ease;
+}
+
+.navBtn:hover {
+  background-color: #f7f7f7;
+}
+
+.placeholderBtn {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+}
+
+.weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  margin-bottom: 8px;
+}
+
+.weekday {
+  font-size: 12px;
+  font-weight: 600;
+  color: #717171;
+  text-align: center;
+  padding: 4px 0;
+}
+
+.daysGrid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  row-gap: 2px;
+}
+
+.emptyDay {
+  height: 44px;
+}
+
+.dayBtn {
+  height: 44px;
+  width: 100%;
+  border: none;
+  background: transparent;
+  font-size: 14px;
+  font-weight: 600;
+  color: #222222;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: inherit;
+  transition: background 0.15s ease;
+}
+
+.dayBtn:hover {
+  border: 1px solid #222222;
+}
+
+.daySelected {
+  background: #222222 !important;
+  color: #FFFFFF !important;
+  border-radius: 50%;
+}
+
+.dayInRange {
+  background: #F7F7F7;
+  border-radius: 0;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.keyboardLink {
+  display: inline-flex;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.keyboardIcon {
+  width: 24px;
+  height: 18px;
+  object-fit: contain;
+}
+
+.clearBtn {
+  background: none;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  color: #222222;
+  text-decoration: underline;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+@media (max-width: 768px) {
+  .monthsGrid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}

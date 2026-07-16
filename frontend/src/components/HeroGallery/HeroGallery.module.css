@@ -1,0 +1,133 @@
+.gallery {
+  position: relative;
+  max-width: var(--max-width);
+  margin: 0 auto 24px;
+  padding: 0;
+}
+
+.heroGallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  height: 460px;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.rightGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 8px;
+}
+
+/* ─── Image cells and wrappers ────────────────────────────────────────────── */
+.cellMain,
+.cell {
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: transparent;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+  transition: opacity 0.2s ease;
+}
+
+.imgMain {
+  object-position: center center;
+}
+
+.imgSofa {
+  object-position: center center;
+}
+
+.imgBathtub {
+  object-position: center center;
+}
+
+.imgBedroom {
+  object-position: center center;
+}
+
+.imgBuilding {
+  object-position: center center;
+}
+
+.cellMain:hover .img,
+.cell:hover .img {
+  opacity: 0.95;
+}
+
+/* ─── Show All Button ──────────────────────────────────────────────────────── */
+.showAll {
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 15px;
+  background: #ffffff;
+  border: 1px solid #222222;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #222222;
+  cursor: pointer;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+  transition: background 0.15s ease;
+}
+
+.showAll:hover {
+  background: #f7f7f7;
+}
+
+.showAllIcon {
+  display: grid;
+  grid-template-columns: repeat(2, 3px);
+  grid-template-rows: repeat(3, 3px);
+  gap: 2px;
+  width: 8px;
+  height: 13px;
+  flex-shrink: 0;
+}
+
+.showAllIcon span {
+  width: 3px;
+  height: 3px;
+  background: currentColor;
+  border-radius: 50%;
+}
+
+@media (max-width: 768px) {
+  .gallery {
+    padding: 0 24px;
+  }
+
+  .heroGallery {
+    display: block;
+    height: 320px;
+    border-radius: 12px;
+  }
+
+  .rightGrid {
+    display: none;
+  }
+
+  .showAll {
+    right: 40px;
+    bottom: 16px;
+  }
+}

@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="100%" height="100%">
+  <defs>
+    <linearGradient id="frameOuter" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F59E0B" />
+      <stop offset="50%" stop-color="#D97706" />
+      <stop offset="100%" stop-color="#92400E" />
+    </linearGradient>
+    <linearGradient id="frameInner" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#B45309" />
+      <stop offset="100%" stop-color="#78350F" />
+    </linearGradient>
+    <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#BAE6FD" />
+      <stop offset="60%" stop-color="#E0F2FE" />
+      <stop offset="100%" stop-color="#FEF3C7" />
+    </linearGradient>
+    <linearGradient id="mountainGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#34D399" />
+      <stop offset="100%" stop-color="#059669" />
+    </linearGradient>
+    <linearGradient id="sunGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FDE047" />
+      <stop offset="100%" stop-color="#F97316" />
+    </linearGradient>
+  </defs>
+
+  <!-- Outer frame drop shadow -->
+  <rect x="7" y="9" width="34" height="32" rx="3" fill="#000000" opacity="0.15" />
+
+  <!-- Outer golden/wooden frame -->
+  <rect x="6" y="7" width="36" height="34" rx="3" fill="url(#frameOuter)" />
+  
+  <!-- Frame inner bevel -->
+  <rect x="9" y="10" width="30" height="28" rx="1.5" fill="url(#frameInner)" />
+
+  <!-- Canvas interior -->
+  <rect x="11" y="12" width="26" height="24" fill="url(#skyGrad)" />
+
+  <!-- Sun in painting -->
+  <circle cx="30" cy="18" r="4.5" fill="url(#sunGrad)" />
+
+  <!-- Distant mountain hills -->
+  <path d="M11 30 L18 21 L26 29 L37 36 L11 36 Z" fill="#10B981" opacity="0.8" />
+  <path d="M21 36 L28 25 L37 34 L37 36 Z" fill="url(#mountainGrad)" />
+
+  <!-- Foreground meadow/flowers -->
+  <path d="M11 32 C16 30, 24 33, 37 30 L37 36 L11 36 Z" fill="#047857" />
+
+  <!-- Little colorful flowers/dots on painting canvas -->
+  <circle cx="16" cy="33" r="1.2" fill="#F43F5E" />
+  <circle cx="20" cy="34" r="1" fill="#FBBF24" />
+  <circle cx="25" cy="32.5" r="1.3" fill="#EC4899" />
+  <circle cx="31" cy="33.5" r="1.1" fill="#60A5FA" />
+  <circle cx="14" cy="34.5" r="0.9" fill="#FBBF24" />
+
+  <!-- Glass/gloss reflection across frame top diagonal -->
+  <path d="M11 12 L24 12 L11 25 Z" fill="#FFFFFF" opacity="0.18" />
+</svg>

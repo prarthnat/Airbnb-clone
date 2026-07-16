@@ -1,0 +1,90 @@
+.footer {
+  background: #F7F7F7;
+  border-top: 1px solid #DDDDDD;
+  margin-top: 0;
+  width: 100%;
+}
+
+.inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 24px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  font-size: 14px;
+  color: #222222;
+}
+
+.dot {
+  color: #222222;
+}
+
+.link {
+  color: #222222;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #222222;
+}
+
+.langBtn,
+.currencyBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  color: #222222;
+  font-family: inherit;
+  padding: 4px 6px;
+  border-radius: 4px;
+}
+
+.langBtn:hover,
+.currencyBtn:hover {
+  text-decoration: underline;
+}
+
+.supportLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #222222;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.supportLink:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .inner {
+    padding: 24px 20px;
+    flex-direction: column-reverse;
+    align-items: flex-start;
+  }
+}

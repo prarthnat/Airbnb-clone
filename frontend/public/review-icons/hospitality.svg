@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="100%" height="100%">
+  <defs>
+    <linearGradient id="boxGradFront" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F472B6" />
+      <stop offset="50%" stop-color="#EC4899" />
+      <stop offset="100%" stop-color="#BE185D" />
+    </linearGradient>
+    <linearGradient id="boxGradSide" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#DB2777" />
+      <stop offset="100%" stop-color="#9D174D" />
+    </linearGradient>
+    <linearGradient id="boxGradTop" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FBCFE8" />
+      <stop offset="100%" stop-color="#F472B6" />
+    </linearGradient>
+    <linearGradient id="ribbonGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF5252" />
+      <stop offset="50%" stop-color="#EF4444" />
+      <stop offset="100%" stop-color="#991B1B" />
+    </linearGradient>
+    <linearGradient id="ribbonBow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FF8080" />
+      <stop offset="50%" stop-color="#EF4444" />
+      <stop offset="100%" stop-color="#B91C1C" />
+    </linearGradient>
+  </defs>
+
+  <!-- Box body (isometric/3D cube) -->
+  <!-- Left front face -->
+  <path d="M8 22 L24 28 L24 44 L8 38 Z" fill="url(#boxGradFront)" />
+  <!-- Right side face -->
+  <path d="M24 28 L40 22 L40 38 L24 44 Z" fill="url(#boxGradSide)" />
+  <!-- Top lid face -->
+  <path d="M24 12 L40 22 L24 28 L8 22 Z" fill="url(#boxGradTop)" />
+
+  <!-- Box lid thickness -->
+  <path d="M7 21 L24 27.5 L41 21 L41 24 L24 30.5 L7 24 Z" fill="#9D174D" opacity="0.3" />
+  <path d="M7 21 L24 27.5 L24 30.5 L7 24 Z" fill="#EC4899" />
+  <path d="M24 27.5 L41 21 L41 24 L24 30.5 Z" fill="#BE185D" />
+
+  <!-- Vertical ribbons on sides -->
+  <path d="M21 26.8 L27 24.5 L27 42.8 L21 45.2 Z" fill="url(#ribbonGrad)" />
+  <path d="M14 24 L19 26 L19 42 L14 40 Z" fill="url(#ribbonGrad)" opacity="0.9" />
+  <path d="M29 26 L34 24 L34 40 L29 42 Z" fill="url(#ribbonGrad)" opacity="0.8" />
+
+  <!-- Ribbon across top -->
+  <path d="M14 18.2 L29 26 L34 24 L19 16.2 Z" fill="url(#ribbonGrad)" />
+  <path d="M29 18.2 L14 24 L19 26 L34 20.2 Z" fill="url(#ribbonGrad)" />
+
+  <!-- Satin bow loops on top -->
+  <!-- Left loop -->
+  <path d="M24 16 C16 10, 12 16, 21 18 Z" fill="url(#ribbonBow)" />
+  <!-- Right loop -->
+  <path d="M24 16 C32 10, 36 16, 27 18 Z" fill="url(#ribbonBow)" />
+  <!-- Ribbon tails -->
+  <path d="M22 17 C18 20, 15 21, 13 23 L16 24 C18 22, 21 19, 23 18 Z" fill="url(#ribbonBow)" />
+  <path d="M26 17 C30 20, 33 21, 35 23 L32 24 C30 22, 27 19, 25 18 Z" fill="url(#ribbonBow)" />
+  <!-- Center knot -->
+  <circle cx="24" cy="17" r="3" fill="url(#ribbonBow)" />
+  <circle cx="23.2" cy="16.2" r="1" fill="#FFFFFF" opacity="0.4" />
+</svg>

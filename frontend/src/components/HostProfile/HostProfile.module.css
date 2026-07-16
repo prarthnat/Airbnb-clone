@@ -1,0 +1,295 @@
+.section {}
+
+/* ─── Section Heading ──────────────────────────────────────────────────────── */
+.sectionHeading {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-6);
+}
+
+/* ─── Layout: 2-column ─────────────────────────────────────────────────────── */
+.layout {
+  display: grid;
+  grid-template-columns: 365px 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+/* ─── Host Card (left column) ──────────────────────────────────────────────── */
+.leftCol {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.hostCard {
+  border: 1px solid var(--color-border);
+  border-radius: 24px;
+  padding: 32px 20px;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  background: var(--color-bg);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.cardLeft {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  padding-right: 12px;
+  border-right: 1px solid var(--color-border);
+}
+
+.hostName {
+  font-size: 32px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  line-height: 1.25;
+  margin-top: var(--space-4);
+  word-break: break-word;
+}
+
+.hostRole {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  margin-top: 4px;
+}
+
+/* ─── Avatar ────────────────────────────────────────────────────────────────── */
+.avatarWrapper {
+  position: relative;
+  width: 120px;
+  height: 120px;
+}
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+}
+
+.verifiedBadge {
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  width: 30px;
+  height: 30px;
+  background: #E61E4F;
+  border-radius: var(--radius-full);
+  border: 2px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+/* ─── Card Right Column (Stats) ────────────────────────────────────────────── */
+.cardRight {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+.cardStat {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.cardStat:first-child {
+  padding-top: 0;
+}
+
+.cardStat:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.cardStatValue {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  line-height: 1.1;
+}
+
+.statStar {
+  color: var(--color-text-primary);
+  margin-top: -2px;
+}
+
+.cardStatLabel {
+  font-size: 10px;
+  color: var(--color-text-secondary);
+  font-weight: 500;
+  margin-top: 2px;
+}
+
+/* ─── Right: Details Column ─────────────────────────────────────────────────── */
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+/* ─── Personal Info ─────────────────────────────────────────────────────────── */
+.personalInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-left: 20px;
+}
+
+.personalInfoItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: var(--font-size-base);
+  color: var(--color-text-primary);
+}
+
+.personalInfoIcon {
+  color: var(--color-text-primary);
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* ─── Divider within details ─────────────────────────────────────────────────── */
+.dividerHr {
+  height: 1px;
+  background: var(--color-border);
+}
+
+/* ─── Co-Hosts ──────────────────────────────────────────────────────────────── */
+.coHostsSection {}
+
+.coHostsHeading {
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-4);
+}
+
+.coHostsGrid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.coHostItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.coHostAvatar {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-full);
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.coHostInitial {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  flex-shrink: 0;
+}
+
+.coHostName {
+  font-size: var(--font-size-base);
+  color: var(--color-text-primary);
+  line-height: 1.3;
+}
+
+/* ─── Host Details ─────────────────────────────────────────────────────────── */
+.hostDetails {}
+
+.hostDetailsHeading {
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-2);
+}
+
+.hostDetailLine {
+  font-size: var(--font-size-base);
+  color: var(--color-text-primary);
+  line-height: 1.6;
+}
+
+/* ─── Message Button ───────────────────────────────────────────────────────── */
+.messageBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  background: var(--color-bg);
+  border: 1.5px solid var(--color-text-primary);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  cursor: pointer;
+  transition: background var(--transition-fast);
+  font-family: inherit;
+  align-self: flex-start;
+}
+
+.messageBtn:hover {
+  background: var(--color-bg-hover);
+}
+
+/* ─── Safety Note ──────────────────────────────────────────────────────────── */
+.safetyNote {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-4) 0;
+}
+
+.safetyText {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+
+/* ─── Divider ───────────────────────────────────────────────────────────────── */
+.divider {
+  height: 1px;
+  background: var(--color-border);
+  margin: var(--space-10) 0;
+}
+
+@media (max-width: 768px) {
+  .layout {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+
+  .hostCard {
+    max-width: 365px;
+    margin: 0 auto;
+  }
+  
+  .coHostsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

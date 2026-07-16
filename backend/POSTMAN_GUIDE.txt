@@ -1,0 +1,454 @@
+================================================================================
+  AIRBNB CLONE — POSTMAN API TESTING GUIDE
+  Backend: Node.js + Express  |  Base URL: http://localhost:3001
+================================================================================
+
+PREREQUISITES
+─────────────
+1. Ensure Node.js (v18+) is installed: node --version
+2. Install dependencies:
+     cd backend
+     npm install
+3. Start the server:
+     npm run dev        ← development (auto-restart on changes)
+   OR
+     npm start          ← production start
+
+4. Server will be running at: http://localhost:3001
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+HOW TO IMPORT INTO POSTMAN
+─────────────────────────
+Option A — Manual Entry (follow this guide step by step)
+Option B — Create a new Collection called "Airbnb Clone API" and add each
+           request as a new request under that collection.
+
+Set a Collection Variable:
+  Variable name : BASE_URL
+  Initial value : http://localhost:3001
+  (Use {{BASE_URL}} in all request URLs below)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+ENDPOINT 1: HEALTH CHECK
+─────────────────────────
+Request Name : Health Check
+Method       : GET
+URL          : {{BASE_URL}}/health
+
+Steps:
+  1. Open Postman → New Request
+  2. Set method to GET
+  3. Enter URL: http://localhost:3001/health
+  4. Click SEND
+
+Expected Response (200 OK):
+  {
+    "status": "ok",
+    "timestamp": "2024-10-14T10:30:00.000Z",
+    "service": "airbnb-clone-backend",
+    "version": "1.0.0"
+  }
+
+What to verify:
+  ✓ Status code is 200
+  ✓ "status" field equals "ok"
+  ✓ "timestamp" is a valid ISO 8601 date string
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+ENDPOINT 2: API ROOT
+─────────────────────
+Request Name : API Root / Endpoint Map
+Method       : GET
+URL          : {{BASE_URL}}/
+
+Steps:
+  1. New Request → GET → http://localhost:3001/
+  2. Click SEND
+
+Expected Response (200 OK):
+  {
+    "message": "Airbnb Clone API",
+    "endpoints": {
+      "health": "GET /health",
+      "listing": "GET /api/listing/:id",
+      "listingPhotos": "GET /api/listing/:id/photos",
+      "reviews": "GET /api/reviews/:listingId",
+      "host": "GET /api/host/:id"
+    }
+  }
+
+What to verify:
+  ✓ Status code is 200
+  ✓ All 5 endpoint keys are present in the "endpoints" object
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+ENDPOINT 3: GET LISTING (Full Details)
+──────────────────────────────────────
+Request Name : Get Listing by ID
+Method       : GET
+URL          : {{BASE_URL}}/api/listing/villa-azure-1
+
+Steps:
+  1. New Request → GET
+  2. URL: http://localhost:3001/api/listing/villa-azure-1
+  3. Click SEND
+
+Expected Response (200 OK):
+  {
+    "success": true,
+    "data": {
+      "id": "villa-azure-1",
+      "title": "Villa Azure — Clifftop Retreat with Infinity Pool",
+      "subtitle": "Entire villa hosted by Sophia & Marco",
+      "description": "...",
+      "location": {
+        "city": "Oia",
+        "region": "Santorini",
+        "country": "Greece",
+        "lat": 36.4618,
+        "lng": 25.3753,
+        ...
+      },
+      "stats": {
+        "guests": 6,
+        "bedrooms": 3,
+        "beds": 4,
+        "bathrooms": 3
+      },
+      "rating": 4.98,
+      "reviewCount": 247,
+      "pricing": {
+        "basePrice": 420,
+        "cleaningFee": 95,
+        "serviceFee": 87,
+        "currency": "USD",
+        "minimumNights": 3
+      },
+      "badges": [...],
+      "highlights": [...],
+      "amenities": [...],
+      "photos": [...]
+    }
+  }
+
+What to verify:
+  ✓ Status code is 200
+  ✓ "success" is true
+  ✓ "data.id" equals "villa-azure-1"
+  ✓ "data.photos" is an array with 12 items
+  ✓ "data.amenities" is an array with 24 items
+  ✓ "data.pricing.basePrice" equals 420
+
+Test: Invalid listing ID
+  URL: http://localhost:3001/api/listing/invalid-id
+  Expected: 404 Not Found
+  Response: { "error": "Listing 'invalid-id' not found" }
+  ✓ Status code is 404
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+ENDPOINT 4: GET LISTING PHOTOS (All Photos)
+────────────────────────────────────────────
+Request Name : Get All Listing Photos
+Method       : GET
+URL          : {{BASE_URL}}/api/listing/villa-azure-1/photos
+
+Steps:
+  1. New Request → GET
+  2. URL: http://localhost:3001/api/listing/villa-azure-1/photos
+  3. Click SEND
+
+Expected Response (200 OK):
+  {
+    "success": true,
+    "total": 12,
+    "categories": ["Pool & Outdoors", "Views", "Living Room", "Bedroom", "Bathroom", "Kitchen"],
+    "data": [
+      {
+        "id": "p1",
+        "url": "https://images.unsplash.com/...",
+        "caption": "Villa Azure — Clifftop infinity pool at sunset",
+        "category": "Pool & Outdoors",
+        "featured": true
+      },
+      ...
+    ]
+  }
+
+What to verify:
+  ✓ Status code is 200
+  ✓ "total" equals 12
+  ✓ "categories" contains 6 unique categories
+  ✓ Each photo has: id, url, caption, category, featured
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+ENDPOINT 5: GET LISTING PHOTOS (Filter by Category)
+─────────────────────────────────────────────────────
+Request Name : Get Photos — Filter by Category
+Method       : GET
+URL          : {{BASE_URL}}/api/listing/villa-azure-1/photos?category=Bedroom
+
+Steps:
+  1. New Request → GET
+  2. URL: http://localhost:3001/api/listing/villa-azure-1/photos
+  3. Click "Params" tab
+  4. Add Key: category | Value: Bedroom
+  5. Click SEND
+
+Expected Response (200 OK):
+  {
+    "success": true,
+    "total": 3,
+    "categories": [...all categories...],
+    "data": [
+      { "id": "p4", "category": "Bedroom", ... },
+      { "id": "p8", "category": "Bedroom", ... },
+      { "id": "p12", "category": "Bedroom", ... }
+    ]
+  }
+
+What to verify:
+  ✓ "total" equals 3 (Bedroom photos)
+  ✓ All items in "data" have category "Bedroom"
+
+Try other categories: Pool & Outdoors | Views | Living Room | Bathroom | Kitchen
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+ENDPOINT 6: GET LISTING PHOTOS (Featured Only)
+───────────────────────────────────────────────
+Request Name : Get Photos — Featured (Hero) Only
+Method       : GET
+URL          : {{BASE_URL}}/api/listing/villa-azure-1/photos?featured=true
+
+Steps:
+  1. New Request → GET
+  2. URL: http://localhost:3001/api/listing/villa-azure-1/photos
+  3. Add query param: Key=featured | Value=true
+  4. Click SEND
+
+Expected Response (200 OK):
+  {
+    "success": true,
+    "total": 5,
+    "data": [photos where featured = true]
+  }
+
+What to verify:
+  ✓ "total" equals 5
+  ✓ All returned photos have "featured": true
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+ENDPOINT 7: GET REVIEWS (Default Pagination)
+──────────────────────────────────────────────
+Request Name : Get Reviews (Default)
+Method       : GET
+URL          : {{BASE_URL}}/api/reviews/villa-azure-1
+
+Steps:
+  1. New Request → GET
+  2. URL: http://localhost:3001/api/reviews/villa-azure-1
+  3. Click SEND
+
+Expected Response (200 OK):
+  {
+    "success": true,
+    "meta": {
+      "total": 6,
+      "page": 1,
+      "limit": 6,
+      "totalPages": 1,
+      "sort": "recent",
+      "avgRating": 5
+    },
+    "data": [
+      {
+        "id": "r1",
+        "listingId": "villa-azure-1",
+        "author": "Charlotte M.",
+        "avatar": "https://...",
+        "rating": 5,
+        "date": "2024-10-14",
+        "text": "...",
+        "location": "London, UK"
+      },
+      ...
+    ]
+  }
+
+What to verify:
+  ✓ Status 200
+  ✓ "meta.total" equals 6
+  ✓ "meta.sort" equals "recent"
+  ✓ Reviews sorted by date descending (most recent first)
+  ✓ Each review has: id, author, avatar, rating, date, text, location
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+ENDPOINT 8: GET REVIEWS (Paginated)
+─────────────────────────────────────
+Request Name : Get Reviews — Paginated
+Method       : GET
+URL          : {{BASE_URL}}/api/reviews/villa-azure-1?page=1&limit=2
+
+Steps:
+  1. New Request → GET
+  2. URL: http://localhost:3001/api/reviews/villa-azure-1
+  3. Add query params:
+     Key=page  | Value=1
+     Key=limit | Value=2
+  4. Click SEND
+
+Expected Response:
+  {
+    "meta": { "page": 1, "limit": 2, "totalPages": 3, ... },
+    "data": [first 2 reviews]
+  }
+
+What to verify:
+  ✓ "data" has exactly 2 items
+  ✓ "meta.totalPages" equals 3
+  ✓ "meta.page" equals 1
+
+Test Page 2: Change page param to 2
+  ✓ Different 2 reviews returned
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+ENDPOINT 9: GET REVIEWS (Sorted by Rating)
+───────────────────────────────────────────
+Request Name : Get Reviews — Sort by Rating
+Method       : GET
+URL          : {{BASE_URL}}/api/reviews/villa-azure-1?sort=rating
+
+Steps:
+  1. Add query param: Key=sort | Value=rating
+  2. Click SEND
+
+Expected Response:
+  ✓ "meta.sort" equals "rating"
+  ✓ Reviews ordered by rating descending (highest first)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+ENDPOINT 10: GET HOST PROFILE
+───────────────────────────────
+Request Name : Get Host Profile
+Method       : GET
+URL          : {{BASE_URL}}/api/host/host-sophia-1
+
+Steps:
+  1. New Request → GET
+  2. URL: http://localhost:3001/api/host/host-sophia-1
+  3. Click SEND
+
+Expected Response (200 OK):
+  {
+    "success": true,
+    "data": {
+      "id": "host-sophia-1",
+      "name": "Sophia & Marco",
+      "firstName": "Sophia",
+      "avatar": "https://...",
+      "memberSince": "March 2018",
+      "isSuperhost": true,
+      "responseRate": 100,
+      "responseTime": "Within an hour",
+      "totalReviews": 247,
+      "rating": 4.98,
+      "bio": "...",
+      "languages": ["English", "Greek", "Italian", "French"],
+      "verifiedIdentity": true,
+      "totalListings": 1
+    }
+  }
+
+What to verify:
+  ✓ Status 200
+  ✓ "data.isSuperhost" is true
+  ✓ "data.responseRate" equals 100
+  ✓ "data.languages" is an array with 4 languages
+
+Test: Invalid host ID
+  URL: http://localhost:3001/api/host/invalid-host
+  Expected: 404 Not Found
+  ✓ Response has "error" field
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+ENDPOINT 11: 404 — Unknown Route
+──────────────────────────────────
+Request Name : 404 Not Found (unknown route)
+Method       : GET
+URL          : {{BASE_URL}}/api/unknown
+
+Steps:
+  1. New Request → GET
+  2. URL: http://localhost:3001/api/unknown
+  3. Click SEND
+
+Expected Response (404 Not Found):
+  { "error": "Route not found" }
+
+What to verify:
+  ✓ Status code is 404
+  ✓ Body contains "error" key
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+POSTMAN AUTOMATED TESTS (Optional)
+─────────────────────────────────────
+In Postman, you can add these scripts to the "Tests" tab for automatic validation:
+
+For the Health Check request:
+  pm.test("Status is 200", () => pm.response.to.have.status(200));
+  pm.test("Service is ok", () => {
+    const json = pm.response.json();
+    pm.expect(json.status).to.eql("ok");
+  });
+
+For the Listing request:
+  pm.test("Status is 200", () => pm.response.to.have.status(200));
+  pm.test("Has 12 photos", () => {
+    const json = pm.response.json();
+    pm.expect(json.data.photos).to.have.lengthOf(12);
+  });
+  pm.test("Price is correct", () => {
+    const json = pm.response.json();
+    pm.expect(json.data.pricing.basePrice).to.eql(420);
+  });
+
+For Reviews:
+  pm.test("Status is 200", () => pm.response.to.have.status(200));
+  pm.test("Has reviews", () => {
+    const json = pm.response.json();
+    pm.expect(json.data.length).to.be.above(0);
+  });
+  pm.test("Meta present", () => {
+    const json = pm.response.json();
+    pm.expect(json.meta).to.have.all.keys("total", "page", "limit", "totalPages", "sort", "avgRating");
+  });
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+QUICK cURL REFERENCE (Alternative to Postman)
+─────────────────────────────────────────────
+curl http://localhost:3001/health
+curl http://localhost:3001/api/listing/villa-azure-1
+curl http://localhost:3001/api/listing/villa-azure-1/photos
+curl "http://localhost:3001/api/listing/villa-azure-1/photos?category=Bedroom"
+curl "http://localhost:3001/api/listing/villa-azure-1/photos?featured=true"
+curl http://localhost:3001/api/reviews/villa-azure-1
+curl "http://localhost:3001/api/reviews/villa-azure-1?page=1&limit=3"
+curl "http://localhost:3001/api/reviews/villa-azure-1?sort=rating"
+curl http://localhost:3001/api/host/host-sophia-1
+
+================================================================================
+  END OF POSTMAN TESTING GUIDE
+================================================================================

@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="100%" height="100%">
+  <defs>
+    <linearGradient id="sofaBack" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F97316" />
+      <stop offset="50%" stop-color="#EA580C" />
+      <stop offset="100%" stop-color="#C2410C" />
+    </linearGradient>
+    <linearGradient id="sofaSeat" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FB923C" />
+      <stop offset="60%" stop-color="#EA580C" />
+      <stop offset="100%" stop-color="#9A3412" />
+    </linearGradient>
+    <linearGradient id="armLeft" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F97316" />
+      <stop offset="70%" stop-color="#C2410C" />
+      <stop offset="100%" stop-color="#9A3412" />
+    </linearGradient>
+    <linearGradient id="armRight" x1="100%" y1="0%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#F97316" />
+      <stop offset="70%" stop-color="#C2410C" />
+      <stop offset="100%" stop-color="#9A3412" />
+    </linearGradient>
+    <linearGradient id="pillowGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38B6FF" />
+      <stop offset="100%" stop-color="#0284C7" />
+    </linearGradient>
+    <linearGradient id="legWood" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#A16207" />
+      <stop offset="100%" stop-color="#713F12" />
+    </linearGradient>
+  </defs>
+
+  <!-- Shadow under armchair -->
+  <ellipse cx="24" cy="43" rx="16" ry="3" fill="#000000" opacity="0.18" />
+
+  <!-- Wooden legs -->
+  <!-- Back left -->
+  <path d="M12 36 L10 43 L13 43 L15 36 Z" fill="url(#legWood)" />
+  <!-- Back right -->
+  <path d="M36 36 L38 43 L35 43 L33 36 Z" fill="url(#legWood)" />
+  <!-- Front left -->
+  <path d="M13 36 L11 44 L15 44 L17 36 Z" fill="url(#legWood)" />
+  <!-- Front right -->
+  <path d="M35 36 L37 44 L33 44 L31 36 Z" fill="url(#legWood)" />
+
+  <!-- Backrest cushion -->
+  <rect x="11" y="11" width="26" height="20" rx="6" fill="url(#sofaBack)" />
+
+  <!-- Seat cushion (2 thick cushions) -->
+  <rect x="11" y="24" width="13" height="12" rx="4" fill="url(#sofaSeat)" />
+  <rect x="24" y="24" width="13" height="12" rx="4" fill="url(#sofaSeat)" />
+  <!-- Seat cushion seam division -->
+  <line x1="24" y1="24" x2="24" y2="36" stroke="#9A3412" stroke-width="1.2" opacity="0.5" />
+
+  <!-- Throw pillow -->
+  <rect x="25" y="17" width="9" height="9" rx="3" fill="url(#pillowGrad)" transform="rotate(12 29.5 21.5)" />
+  <!-- Pillow stripes -->
+  <path d="M26 19 L33 21 M25.5 22 L32.5 24" stroke="#E0F2FE" stroke-width="1.5" stroke-linecap="round" />
+
+  <!-- Left armrest -->
+  <rect x="7" y="18" width="7" height="18" rx="3.5" fill="url(#armLeft)" />
+  
+  <!-- Right armrest -->
+  <rect x="34" y="18" width="7" height="18" rx="3.5" fill="url(#armRight)" />
+
+  <!-- Highlights on top of backrest and armrests -->
+  <path d="M14 12 L34 12" stroke="#FFEDD5" stroke-width="1.5" stroke-linecap="round" opacity="0.4" />
+  <path d="M8.5 19 L12.5 19" stroke="#FFEDD5" stroke-width="1.2" stroke-linecap="round" opacity="0.4" />
+  <path d="M35.5 19 L39.5 19" stroke="#FFEDD5" stroke-width="1.2" stroke-linecap="round" opacity="0.4" />
+</svg>
